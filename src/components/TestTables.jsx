@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import ReactPaginate from "react-paginate";
 
 // Số lượng item trên mỗi trang
-const ITEMS_PER_PAGE = 10;
+const ITEMS_PER_PAGE = 5;
 
 const TestTables = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -17,9 +17,8 @@ const TestTables = () => {
 
         // Giả sử bạn có 10 file JSON, tên từ `data1.json` đến `data10.json`
         const files = [...Array(10).keys()].map((i) =>
-          import(`./data-${i + 1}.json`)
+          import(`../data/data-${i + 1}.json`)
         );
-        console.log(files);
 
         // Sử dụng Promise.all để chờ tất cả file được tải về
         const data = await Promise.all(files);

@@ -1,5 +1,5 @@
 import React from "react";
-import currentPageData from "./data-1.json";
+import currentPageData from "../data/datatest.json";
 
 const TestJson = () => {
   return (

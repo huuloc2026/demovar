@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import ReactPaginate from "react-paginate";
 
 // Số lượng item trên mỗi trang
-const ITEMS_PER_PAGE = 5;
+const ITEMS_PER_PAGE = 15;
 
 const TestTables = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -10,20 +10,20 @@ const TestTables = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Hàm để tải dữ liệu từ nhiều file JSON
+    // Function to load data from multiple JSON files
     const loadData = async () => {
       try {
         setLoading(true);
 
-        // Giả sử bạn có 10 file JSON, tên từ `data1.json` đến `data10.json`
+        // Assume you have 10 JSON files named `data1.json` to `data10.json`
         const files = [...Array(10).keys()].map((i) =>
           import(`../data/data-${i + 1}.json`)
         );
 
-        // Sử dụng Promise.all để chờ tất cả file được tải về
+        // Use Promise.all to wait for all files to be loaded
         const data = await Promise.all(files);
 
-        // Kết hợp dữ liệu từ tất cả các file
+        // Combine the data from all files
         const combinedData = data.flatMap((file) => file.default);
         setAllData(combinedData);
       } catch (error) {
@@ -35,7 +35,6 @@ const TestTables = () => {
 
     loadData();
   }, []);
-
   const handlePageClick = ({ selected }) => {
     setCurrentPage(selected);
   };

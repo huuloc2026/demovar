@@ -17,7 +17,7 @@ const TestTables = () => {
 
         // Giả sử bạn có 10 file JSON, tên từ `data1.json` đến `data10.json`
         const files = [...Array(10).keys()].map((i) =>
-          import(`/data-${i + 1}.json`)
+          import(`../data/data-${i + 1}.json`)
         );
 
         // Sử dụng Promise.all để chờ tất cả file được tải về

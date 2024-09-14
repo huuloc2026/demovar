@@ -14,8 +14,8 @@ const App = () => {
       <Body></Body>
       {/* <Search></Search> */}
       {/* <TablesSearch></TablesSearch> */}
-      {/* <TestTables></TestTables> */}
-      <TestJson></TestJson>
+      <TestTables></TestTables>
+      {/* <TestJson></TestJson> */}
       {/* <Fetch></Fetch> */}
     </div>
   );
